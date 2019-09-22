@@ -3,10 +3,13 @@
 from sys import stderr
 from time import sleep
 from util import robot
-from movements import gyroTurn
+from movements import (gyroTurn, pidLineFollow)
 
 def run():
-    gyroTurn.target(180, 20)
+
+    pidLineFollow.run(20, 2, 100)
+
+    #gyroTurn.run(180, 20)
 
     # robot.driveBase.on_for_rotations(50, 50, 3, True)
 
